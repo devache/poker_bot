@@ -19,8 +19,10 @@ def estimate_proba(hand, board, n_player, n_simul=1000):
     for _ in range(n_simul):
         deck2 = deepcopy(deck)
         shuffle(deck2.cards)
-        board2 = board+deck2.draw(to_draw)
-
+        if to_draw == 1:
+            board2 = board + [deck2.draw(to_draw)]
+        else:
+            board2 = board + deck2.draw(to_draw)
         if n_player > 2:
             other_hands = list(zip(deck2.draw(n_player-1), deck2.draw(n_player-1)))
             score_others = min([evaluator.evaluate(list(hand2), board2) for hand2 in other_hands])

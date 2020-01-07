@@ -1,0 +1,25 @@
+Testing reenforcment learning with a poker AI (texas holdem)
+
+input features for bot (sorted by importance):
+ - win probability |
+ - win variance    |->MC simulation
+ - how much money is to win / to lose
+ - which round
+ - individual oponents current bet
+ - betting history
+ - basic memory/feedback scheme (for adapting strategy)
+ - random componant (hiding deterministic strategy)
+
+main algorithms:
+ - Q-learning applied to
+	- linear regression
+	- NNs (DQN)
+	- 
+ - evolutionary algorithm (Neuro-evolution)
+
+
+Timeline:
+ - setup project structure and libraries
+ - setup mlflow instance?
+ - create features
+ - first model implementation
